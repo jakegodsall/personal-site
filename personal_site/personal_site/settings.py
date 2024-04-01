@@ -21,7 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Local applications
-    "daily_log.apps.Daily_logConfig",
+    "daily_log.apps.DailyLogConfig",
     # external applications
     "rest_framework"
 ]

@@ -10,22 +10,19 @@ class Skill(models.Model):
 
 
 class DailyEntry(models.Model):
-    datetime = models.DateTimeField(auto_now_add=True)
-    skill = models.ForeignKey(Skill, on_delete=models.CASCADE)
+    class Meta:
+        verbose_name_plural = "Daily Entries"
 
-    def __str__(self):
-        formatted_datetime = self.datetime.strftime('%d-%m-%y %H:%M')
-        return f" {self.skill.name} ({formatted_datetime})"
-
-
-class DailyEntryDetail(models.Model):
     class CategoryChoices(models.TextChoices):
         WID = 'WID', "What I've Done"
         WIL = 'WIL', "What I've Learned"
 
-    category = models.TextField(max_length=2, choices=CategoryChoices.choices)
+    datetime = models.DateTimeField(auto_now_add=True)
+    category = models.TextField(max_length=20, choices=CategoryChoices.choices, default=CategoryChoices.WID)
     content = models.TextField(max_length=500)
-    daily_entry = models.ForeignKey(DailyEntry, on_delete=models.CASCADE)
+    skill = models.ForeignKey(Skill, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.daily_entry} (id: {self.id})"
+        formatted_datetime = self.datetime.strftime('%d-%m-%y %H:%M')
+        return f"{self.skill} ({formatted_datetime})"
+

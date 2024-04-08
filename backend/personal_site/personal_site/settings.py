@@ -23,7 +23,8 @@ INSTALLED_APPS = [
     # Local applications
     "daily_log.apps.DailyLogConfig",
     # external applications
-    "rest_framework"
+    "rest_framework",
+    "rest_framework.authtoken"
 ]
 
 MIDDLEWARE = [

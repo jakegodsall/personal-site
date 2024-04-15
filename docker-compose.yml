@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:8.3.0
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: somerootpassword
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+    ports:
+      - "3306:3306"
+
+  web:
+    build:
+      context: ./backend/personal_site
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend/personal_site:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+      MYSQL_ROOT_PASSWORD: somerootpassword
+      MYSQL_HOST: db
+
+volumes:
+  mysql_data:

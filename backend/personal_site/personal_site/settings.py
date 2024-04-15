@@ -1,17 +1,14 @@
 import os
 from pathlib import Path
 
-from dotenv import load_dotenv
-
-load_dotenv()
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+# SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-secret')
+SECRET_KEY = "sdfasfsadfasdfasdfsdfasdfasdfas"
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -60,11 +57,11 @@ WSGI_APPLICATION = 'personal_site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT')
+        'NAME': "mydatabase",
+        'USER': "myuser",
+        'PASSWORD': "mypassword",
+        'HOST': "db",
+        'PORT': "3306"
     }
 }
 

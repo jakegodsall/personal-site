@@ -16,8 +16,15 @@ class ProjectSerializer(serializers.ModelSerializer):
 
 
 class DailyEntrySerializer(serializers.ModelSerializer):
-    skills = serializers.StringRelatedField(many=True)
-    project = serializers.StringRelatedField()
+    skills = serializers.SlugRelatedField(
+        many=True,
+        queryset=Skill.objects.all(),
+        slug_field='name'
+    )
+    project = serializers.SlugRelatedField(
+        queryset=Project.objects.all(),
+        slug_field='name'
+    )
     class Meta:
         model = DailyEntry
         fields = '__all__'

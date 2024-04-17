@@ -23,7 +23,7 @@ class DailyEntry(models.Model):
     class Meta:
         verbose_name_plural = "Daily Entries"
 
-    datetime = models.DateTimeField(auto_now_add=True)
+    datetime = models.DateTimeField(null=True)
     content = models.TextField(max_length=500)
     skills = models.ManyToManyField(Skill, related_name="daily_entries")
     project = models.ForeignKey(Project, related_name='daily_entries', on_delete=models.CASCADE)

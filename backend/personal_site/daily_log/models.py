@@ -25,7 +25,7 @@ class DailyEntry(models.Model):
 
     datetime = models.DateTimeField(auto_now_add=True)
     content = models.TextField(max_length=500)
-    skill = models.ManyToManyField(Skill, related_name="daily_entries")
+    skills = models.ManyToManyField(Skill, related_name="daily_entries")
     project = models.ForeignKey(Project, related_name='daily_entries', on_delete=models.CASCADE)
 
     def __str__(self):

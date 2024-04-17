@@ -6,6 +6,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-secret')
 SECRET_KEY = "sdfasfsadfasdfasdfsdfasdfasdfas"
 
+CORS_ALLOW_ALL_ORIGINS = True
+
 DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
@@ -20,11 +22,13 @@ INSTALLED_APPS = [
     # Local applications
     "daily_log.apps.DailyLogConfig",
     # external applications
+    "corsheaders",
     "rest_framework",
     "rest_framework.authtoken"
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -32,6 +36,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'personal_site.urls'

@@ -23,11 +23,13 @@ class DailyEntry(models.Model):
         verbose_name_plural = "Daily Entries"
 
     datetime = models.DateTimeField(null=True)
-    content = models.TextField(max_length=500)
+    content = models.CharField(max_length=500)
+    duration = models.PositiveIntegerField()
     skills = models.ManyToManyField(Skill, related_name="daily_entries")
     project = models.ForeignKey(Project, related_name='daily_entries', on_delete=models.CASCADE)
 
     def __str__(self):
         formatted_datetime = self.datetime.strftime('%d-%m-%y %H:%M')
-        return f"{self.skill} ({formatted_datetime})"
+        substring = self.content[:30] + "..." if len(self.content) > 30 else self.content
+        return f"{substring} ({formatted_datetime})"
 

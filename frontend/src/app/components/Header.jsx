@@ -42,7 +42,11 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-      <AnimatePresence>{mobileMenuOpen && <MobileMenu />}</AnimatePresence>
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <MobileMenu handleCloseMobileMenu={handleMobileMenu} />
+        )}
+      </AnimatePresence>
     </header>
   );
 }

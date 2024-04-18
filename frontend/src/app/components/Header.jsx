@@ -1,6 +1,8 @@
 "use client";
+
 import { useState } from "react";
 import Link from "next/link";
+import { AnimatePresence } from "framer-motion";
 
 import HamburgerButton from "./UI/Hamburger";
 import MobileMenu from "./Modals/MobileMenu/MobileMenu";
@@ -40,7 +42,7 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-      <MobileMenu />
+      <AnimatePresence>{mobileMenuOpen && <MobileMenu />}</AnimatePresence>
     </header>
   );
 }

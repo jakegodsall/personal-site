@@ -3,8 +3,7 @@ from django.db import models
 
 class Skill(models.Model):
     name = models.CharField(max_length=200)
-    description = models.TextField(max_length=200)
-    icon = models.CharField(max_length=200)
+    icon = models.FileField(upload_to='daily_log/icons/')
 
     def __str__(self):
         return self.name

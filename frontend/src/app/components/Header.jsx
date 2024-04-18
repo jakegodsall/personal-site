@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 import HamburgerButton from "./UI/Hamburger";
+import MobileMenu from "./Modals/MobileMenu/MobileMenu";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,7 +15,7 @@ export default function Header() {
   return (
     <header className="flex justify-between items-center bg-grey-primary p-[1.6rem] md:p-[3.5rem]">
       <h1 className="text-[3.2rem] font-bold">JG</h1>
-      <div className="md:hidden">
+      <div className="md:hidden relative z-40">
         <HamburgerButton
           mobileMenuOpen={mobileMenuOpen}
           setMobileMenuOpen={handleMobileMenu}
@@ -39,6 +40,7 @@ export default function Header() {
           </li>
         </ul>
       </nav>
+      <MobileMenu />
     </header>
   );
 }

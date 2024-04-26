@@ -20,11 +20,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Local applications
+    "blog.apps.BlogConfig",
     "daily_log.apps.DailyLogConfig",
     # external applications
     "corsheaders",
     "rest_framework",
-    "rest_framework.authtoken"
+    "rest_framework.authtoken",
+    "ckeditor"
 ]
 
 MIDDLEWARE = [

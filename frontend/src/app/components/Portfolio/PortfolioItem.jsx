@@ -1,15 +1,25 @@
+import Image from "next/image";
 import clsx from "clsx";
 
 export default function PortfolioItem({
   title,
+  image,
   description,
   skills,
   liveSiteUrl,
   githubUrl,
 }) {
   return (
-    <div>
-      <div></div>
+    <div className="rounded-2xl overflow-hidden shadow-lg">
+      <div className="p-[3.2rem] bg-grey-primary flex flex-col items-center">
+        <Image
+          className="hover:scale-[105%] transition-all duration-300"
+          src="/assets/portfolio/portfolio1.png"
+          width="280"
+          height="190"
+          alt={title}
+        />
+      </div>
       <div className="p-[3.2rem]">
         <p className="text-[1.6rem] mb-[2.4rem] font-bold">{title}</p>
         <p className="text-[1.6rem] text-gray-600 mb-[2.4rem]">{description}</p>

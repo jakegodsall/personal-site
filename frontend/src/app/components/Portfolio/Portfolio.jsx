@@ -4,6 +4,7 @@ const DUMMY_DATA = [
   {
     id: 1,
     title: "Fiskil",
+    image: "",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec urna ac tellus volutpat viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
     skills: [

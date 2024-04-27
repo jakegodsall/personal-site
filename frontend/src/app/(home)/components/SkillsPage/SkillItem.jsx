@@ -8,7 +8,7 @@ export default function SkillItem({ name, icon }) {
         alt={name}
         width="40"
         height="40"
-        className="mb-[0.6rem]"
+        className="mb-[0.6rem] w-[4rem] h-auto"
       />
       <p className="text-gray-600 text-[1.3rem]">{name}</p>
     </div>

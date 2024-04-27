@@ -1,4 +1,3 @@
-import Image from "next/image";
 import SkillItem from "./SkillItem";
 
 const SKILLS = [
@@ -31,8 +30,16 @@ const SKILLS = [
     icon: "assets/iconsSkill/mysql.svg",
   },
   {
-    name: "C#",
-    icon: "assets/iconsSkill/csharp.svg",
+    name: "PHP",
+    icon: "assets/iconsSkill/php.svg",
+  },
+  {
+    name: "Laravel",
+    icon: "assets/iconsSkill/laravel.svg",
+  },
+  {
+    name: "Swift",
+    icon: "assets/iconsSkill/swift.svg",
   },
 ];
 
@@ -41,7 +48,7 @@ export default function Skills() {
     <section>
       <h2 className="text-[2.4rem] font-semibold mb-[2.4rem]">Skills</h2>
       <p className="text-[1.6rem] leading-[2.6rem] text-gray-600 mb-[4rem]">
-        The technologies I use on a daily basis.
+        The technologies I use on a daily basis:
       </p>
       <ul className="flex items-end gap-[2rem] flex-wrap justify-center">
         {SKILLS.map((skill, idx) => (

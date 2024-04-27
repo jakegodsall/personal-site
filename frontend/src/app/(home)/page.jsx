@@ -11,7 +11,7 @@ export default function Home() {
       <div className="px-[1.6rem] bg-grey-primary py-[6.4rem]">
         <AboutMe />
       </div>
-      <div className="px-[1.6rem] bg-white py-[6.4rem]">
+      <div className="px-[1.6rem] bg-white pyw-[6.4rem]">
         <Skills />
       </div>
     </main>

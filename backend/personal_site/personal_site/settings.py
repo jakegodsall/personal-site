@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     # Local applications
     "blog.apps.BlogConfig",
     "daily_log.apps.DailyLogConfig",
+    "portfolio.apps.PortfolioConfig",
     # external applications
     "corsheaders",
     "rest_framework",
